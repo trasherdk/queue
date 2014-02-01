@@ -15,11 +15,11 @@ Queue.prototype.push = function(item) {
     this._items.push(item)
 }
 
-Queue.prototype.pop = function() {
+Queue.prototype.pop = function(cb) {
   var item = this._items.pop()
-  return item
+  return (item
     ? Promise.from(item)
     : new Promise(function(resolve, reject) {
         this._waiting.push(resolve)
-      })
+      })).nodeify(cb)
 }
