@@ -20,12 +20,14 @@ Queue.prototype.push = function(item) {
 }
 
 Queue.prototype.pop = function(cb) { var self = this
-  var item = this._items.shift()
-  this.length--
-  if (item)
+  if (this._items.length) {
+    var item = this._items.shift()
+    this.length--
     return Promise.from(item).nodeify(cb)
-  else
+  }
+  else {
     return new Promise(function(resolve, reject) {
       self._waiting.push(resolve)
     }).nodeify(cb)
+  }
 }
