@@ -19,3 +19,7 @@
 
   Pop an item from the queue
 
+### queue.length
+
+  Amount of items in the queue.
+
