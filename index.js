@@ -11,12 +11,14 @@ function Queue() {
 }
 
 Queue.prototype.push = function(item) {
-  var waiting = this._waiting.shift()
-  this.length++
-  if (waiting)
+  if (this._waiting.length) {
+    var waiting = this._waiting.shift()
     waiting(item)
-  else
+  }
+  else {
+    this.length++
     this._items.push(item)
+  }
 }
 
 Queue.prototype.pop = function(cb) { var self = this
