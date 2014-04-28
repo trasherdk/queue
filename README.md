@@ -32,3 +32,7 @@ var q = new Queue();
 ### queue.length
 
   Amount of items in the queue (note that this can be negative if `pop` has been called more times than `push`).
+
+### Events
+
+The `length-changed` event gets emitted whenever `pop` or `push` has been called. You could use it to spawn/kill workers when the length changes.
