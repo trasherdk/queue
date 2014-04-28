@@ -11,21 +11,21 @@ function Queue() {
 }
 
 Queue.prototype.push = function(item) {
+  this.length++
   if (this._waiting.length) {
     var waiting = this._waiting.shift()
     waiting(item)
   }
   else {
-    this.length++
     this._items.push(item)
   }
 }
 
 Queue.prototype.pop = function(cb) { var self = this
+  this.length--
   if (this._items.length) {
     var item = this._items.shift()
-    this.length--
-    return Promise.from(item).nodeify(cb)
+    return Promise.resolve(item).nodeify(cb)
   }
   else {
     return new Promise(function(resolve, reject) {

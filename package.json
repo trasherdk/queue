@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nathan7/then-queue.git"
+    "url": "git://github.com/then/queue.git"
   },
   "keywords": [
     "queue",
@@ -15,10 +15,16 @@
   "author": "Nathan Zadoks",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nathan7/then-queue/issues"
+    "url": "https://github.com/then/queue/issues"
   },
-  "homepage": "https://github.com/nathan7/then-queue",
+  "homepage": "https://github.com/then/queue",
   "dependencies": {
-    "promise": "^3"
+    "promise": "^5.0.0"
+  },
+  "devDependencies": {
+    "testit": "~1.2.0"
+  },
+  "scripts": {
+    "test": "node test"
   }
 }
