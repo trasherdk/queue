@@ -19,10 +19,10 @@
   },
   "homepage": "https://github.com/then/queue",
   "dependencies": {
-    "promise": "^6.0.0"
+    "promise": "^8.1.0"
   },
   "devDependencies": {
-    "testit": "~1.2.0"
+    "testit": "~3.1.0"
   },
   "scripts": {
     "test": "node test"
